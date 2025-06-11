@@ -1,0 +1,49 @@
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* === Светлая тема (по умолчанию) === */
+body.light-theme {
+    background: #fff;
+    color: #000000;
+}
+
+body.dark-theme .label__text {
+
+    color: #000000;
+}
+
+body.light-theme .content {
+    background-color: $text-light;
+    color: #374151;
+}
+
+body.light-theme footer {
+    color: #00000062;
+}
+
+/* === Тёмная тема === */
+body.dark-theme {
+    background: #111827;
+    color: #f9fafb;
+}
+
+body.dark-theme .label__text {
+    color: $text-light;
+}
+
+body.dark-theme .content {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+body.dark-theme footer {
+    color: #979797;
+}

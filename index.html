@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Бункер</title>
+    <!-- <link rel="stylesheet" href="/scr/css/.css" /> -->
+    <link rel="stylesheet" href="/scr/css/style.css" />
+
+    <script src="/scr/js/auth.js" defer></script>
+    <script src="/scr/js/dark-theame.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="elmement">
+                <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+            </div>
+        </div>
+    </header>
+    <section class="bunker__lobby">
+        <div class="lobby__UI">
+            <div class="lobby__UI-header">
+                <h1>Бункер</h1>
+                <p>Играйте с друзьями онлайн</p>
+            </div>
+
+            <div class="content">
+                <div class="lobby__input">
+                    <div class="input__group">
+                        <label class="label__text" for="username">Ваше имя</label>
+                        <input type="text" id="username" placeholder="Введите ваше имя" />
+                    </div>
+
+                    <div class="action-buttons">
+                        <button>Создать комнату</button>
+                        <button>Присоединиться</button>
+                    </div>
+
+                    <div class="input__group">
+                        <label class="label__text" for="room-code">Код комнаты</label>
+                        <input type="text" id="room-code" placeholder="Например: ABC123" class="uppercase"
+                            autocomplete="off" autocorrect="off" spellcheck="false" />
+                    </div>
+                </div>
+
+                <!-- Игровой интерфейс -->
+                <div class="game-interface hidden">
+                    <button id="leave-room-btn">
+                        <svg class="back-arrow" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> </button>
+                    <h2>Ожидание игроков</h2>
+                    <p>Код комнаты: <span id="display-room-code">ABC123</span></p>
+
+                    <div class="players-list">
+                        <h3>Игроки в комнате:</h3>
+                        <ul id="players"></ul>
+                    </div>
+
+                    <button id="close-room-btn">Закрыть комнату</button>
+                    <button id="start-game-btn">Начать игру</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+</body>
+
+<footer>
+    <p>© 2025 Бункер. Онлайн-игра для друзей.</p>
+</footer>
+
+</html>

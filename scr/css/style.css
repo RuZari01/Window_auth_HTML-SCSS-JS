@@ -1,0 +1,268 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+span,
+input,
+button,
+address,
+li,
+div {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.bunker__lobby {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.bunker__lobby .lobby__UI {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+.bunker__lobby .lobby__UI .lobby__UI-header {
+  background: linear-gradient(to right, #6366F1, #8B5CF6);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 2rem;
+}
+.bunker__lobby .lobby__UI .lobby__UI-header h1 {
+  font-size: 3.25rem;
+  font-weight: bold;
+}
+.bunker__lobby .lobby__UI .lobby__UI-header p {
+  margin-top: 0.9rem;
+  opacity: 0.9;
+}
+.bunker__lobby .content {
+  padding: 2rem;
+}
+.bunker__lobby .content .lobby__input {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.bunker__lobby .content .lobby__input .input__group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.bunker__lobby .content .lobby__input .input__group input {
+  width: 97%;
+  padding: 10px 0px;
+  padding-left: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.bunker__lobby .content .lobby__input .input__group input:focus {
+  outline: none;
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+.bunker__lobby .content .lobby__input .input__group input.uppercase {
+  text-transform: uppercase;
+}
+.bunker__lobby .content .lobby__input .action-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.bunker__lobby .content .lobby__input .action-buttons button {
+  background-color: #4F46E5;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.bunker__lobby .content .lobby__input .action-buttons button:hover {
+  background-color: #291fd9;
+}
+.bunker__lobby .content .lobby__input .action-buttons button:nth-child(2) {
+  background-color: #3730A3;
+}
+.bunker__lobby .content .lobby__input .action-buttons button:nth-child(2):hover {
+  background-color: #2a247c;
+}
+.bunker__lobby .content .hidden {
+  display: none !important;
+}
+.bunker__lobby .content .game-interface {
+  text-align: center;
+  padding: 2rem;
+}
+.bunker__lobby .content .game-interface h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+.bunker__lobby .content .game-interface p {
+  margin-bottom: 1.5rem;
+}
+.bunker__lobby .content .game-interface .players-list {
+  margin-bottom: 2rem;
+}
+.bunker__lobby .content .game-interface .players-list ul {
+  list-style: none;
+  padding: 0;
+}
+.bunker__lobby .content .game-interface .players-list ul li {
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+}
+.bunker__lobby .content .game-interface button {
+  background-color: #4F46E5;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.bunker__lobby .content .game-interface button:hover {
+  background-color: #291fd9;
+}
+.bunker__lobby .content .game-interface button.danger {
+  background-color: #EF4444;
+}
+.bunker__lobby .content .game-interface button.danger:hover {
+  background-color: #eb1515;
+}
+
+footer {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.notification-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 320px;
+  pointer-events: none;
+}
+
+.notification {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.notification.success {
+  border-left: 4px solid #10B981;
+  color: #065F46;
+}
+.notification.error {
+  border-left: 4px solid #EF4444;
+  color: #991B1B;
+}
+.notification .icon {
+  margin-right: 0.75rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+.notification .message {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.notification .close-btn {
+  margin-left: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #6B7280;
+  transition: color 0.2s ease;
+}
+.notification .close-btn:hover {
+  color: #374151;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* === Светлая тема (по умолчанию) === */
+body.light-theme {
+  background: #fff;
+  color: #000000;
+}
+
+body.dark-theme .label__text {
+  color: #000000;
+}
+
+body.light-theme .content {
+  background-color: #f9fafb;
+  color: #374151;
+}
+
+body.light-theme footer {
+  color: rgba(0, 0, 0, 0.3843137255);
+}
+
+/* === Тёмная тема === */
+body.dark-theme {
+  background: #111827;
+  color: #f9fafb;
+}
+
+body.dark-theme .label__text {
+  color: #f9fafb;
+}
+
+body.dark-theme .content {
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+body.dark-theme footer {
+  color: #979797;
+}/*# sourceMappingURL=style.css.map */

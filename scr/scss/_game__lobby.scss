@@ -1,0 +1,167 @@
+//@import "./main";
+
+.bunker__lobby {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+    .lobby__UI {
+        width: 100%;
+        max-width: 500px;
+        background-color: white;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+
+        .lobby__UI-header {
+            background: linear-gradient(to right, $bg-gradient-start, $bg-gradient-end);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 2rem;
+
+            h1 {
+                font-size: 3.25rem;
+                font-weight: bold;
+            }
+
+            p {
+                margin-top: 0.9rem;
+                opacity: 0.9;
+            }
+        }
+    }
+
+    .content {
+        padding: 2rem;
+
+        .lobby__input {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .input__group {
+                label {
+                    display: block;
+                    margin-bottom: 0.5rem;
+                    font-weight: 500;
+                    //color: #374151;
+                }
+
+                input {
+                    width: 97%;
+                    padding: 10px 0px;
+                    padding-left: 10px;
+                    border: 1px solid #d1d5db;
+                    border-radius: 0.5rem;
+                    font-size: 1rem;
+                    transition: all 0.3s ease;
+
+                    &:focus {
+                        outline: none;
+                        border-color: $primary-color;
+                        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+                    }
+
+                    &.uppercase {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            .action-buttons {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+
+                button {
+                    background-color: $primary-color;
+                    color: white;
+                    font-weight: bold;
+                    padding: 0.75rem 1rem;
+                    border: none;
+                    border-radius: 0.5rem;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+
+                    &:hover {
+                        background-color: darken($primary-color, 10%);
+                    }
+
+                    &:nth-child(2) {
+                        background-color: $secondary-color;
+
+                        &:hover {
+                            background-color: darken($secondary-color, 10%);
+                        }
+                    }
+                }
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .game-interface {
+            text-align: center;
+            padding: 2rem;
+
+            h2 {
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 1.5rem;
+            }
+
+            p {
+                margin-bottom: 1.5rem;
+            }
+
+            .players-list {
+                margin-bottom: 2rem;
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        padding: 0.5rem 0;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+
+            button {
+                background-color: $primary-color;
+                color: white;
+                font-weight: bold;
+                padding: 0.75rem 1.5rem;
+                border: none;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: darken($primary-color, 10%);
+                }
+
+                &.danger {
+                    background-color: $error-color;
+
+                    &:hover {
+                        background-color: darken($error-color, 10%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
