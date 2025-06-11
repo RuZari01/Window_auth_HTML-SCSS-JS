@@ -8,4 +8,4 @@ https://ruzari01.github.io/HTML-SCSS-positivus/
 
 ### Скриншоты
 
-![auth](.scr/screenshots/1.png)
+![auth](screenshots/1.png)
